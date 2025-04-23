@@ -27,7 +27,7 @@ contract VaultTest is Test {
 
     function testWithdraw() public {
         // TODO: prank user, deposit 2 ether, withdraw 1 ether
-        vm.startprank(user);
+        vm.startPrank(user);
         vault.deposit{value : 2 ether}();
         vault.withdraw{value : 1 ether}();
         vm.stopPrank();
@@ -36,7 +36,7 @@ contract VaultTest is Test {
 
     function test_RevertWithdrawMoreThanBalance() public {
         // TODO: prank user, deposit 1 ether
-        vm.startprank(user);
+        vm.startPrank(user);
         vault.deposit{value : 1 ether}();
         vm.expectRevert();
         // TODO: try to withdraw 2 ether
