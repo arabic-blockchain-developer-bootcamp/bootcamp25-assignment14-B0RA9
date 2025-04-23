@@ -50,7 +50,7 @@ contract VaultTest is Test {
         vault.deposit{value : 0.5 ether}();
         // TODO: assert returned balance is 0.5 ether
         uint256 balance = vault.getBalance();
-        vm.stopPrank(user);
+        vm.stopPrank();
         assertEq(balance, 0.5 ether);
         
     }
