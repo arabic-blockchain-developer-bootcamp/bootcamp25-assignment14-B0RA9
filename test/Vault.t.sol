@@ -54,3 +54,4 @@ contract VaultTest is Test {
         assertEq(balance, 0.5 ether);
         
     }
+}
