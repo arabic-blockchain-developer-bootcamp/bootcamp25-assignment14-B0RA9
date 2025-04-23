@@ -29,7 +29,7 @@ contract VaultTest is Test {
         // TODO: prank user, deposit 2 ether, withdraw 1 ether
         vm.startPrank(user);
         vault.deposit{value : 2 ether}();
-        vault.withdraw{value : 1 ether}();
+        vault.withdraw(1 ether);
         vm.stopPrank();
         assertEq(vault.balances(user), 1 ether);
     }
@@ -40,7 +40,7 @@ contract VaultTest is Test {
         vault.deposit{value : 1 ether}();
         vm.expectRevert();
         // TODO: try to withdraw 2 ether
-        vault.withdraw{value : 2 ether}();
+        vault.withdraw(2 ether);
         vm.stopPrank();
     }
 
